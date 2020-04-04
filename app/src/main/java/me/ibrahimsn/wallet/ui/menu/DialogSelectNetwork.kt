@@ -33,6 +33,18 @@ class DialogSelectNetwork : BottomSheetDialogFragment() {
             dismiss()
         }
 
+        lyPOA-Core.setOnClickListener {
+            if (listener != null)
+                listener!!.onNetworkSelected(1)
+            dismiss()
+        }
+
+        lyPOA-Sokol.setOnClickListener {
+            if (listener != null)
+                listener!!.onNetworkSelected(1)
+            dismiss()
+        }
+
         lyKovan.setOnClickListener {
             if (listener != null)
                 listener!!.onNetworkSelected(2)

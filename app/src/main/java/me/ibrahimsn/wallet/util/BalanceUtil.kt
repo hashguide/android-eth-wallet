@@ -43,6 +43,11 @@ object BalanceUtil {
         return usd.setScale(2, RoundingMode.CEILING).toString()
     }
 
+    fun poaToUsd(priceUsd: String, ethBalance: BigInteger): String {
+        val usd = subunitToBase(ethBalance).multiply(BigDecimal(priceUsd))
+        return usd.setScale(2, RoundingMode.CEILING).toString()
+    }
+
     fun baseToSubunit(baseAmountStr: String): BigInteger {
         val baseAmount = BigDecimal(baseAmountStr)
         val subunitAmount = baseAmount.multiply(BigDecimal.valueOf(10).pow(ETHER_DECIMALS))
